@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            var txt = "";
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $.get("demo/all", function (data, status) {
+                        console.log(data);
+                        txt += "<table border='1'>"
+                        for (x in data) {
+                            txt += "<tr><td>" + data[x].name + "</td></tr>";
+                        }
+                        txt += "</table>"
+                        document.getElementById("demo").innerHTML = txt;
+                        document.getElementById('name').textContent=data[0].name;
+                        $("#input").val(data[0].email);
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h2>Make a table based on JSON data.</h2>
+
+        <p id="demo"></p>
+         First name:<br>
+        <p id="name"></p>
+        <input type="text" id= "input" name="firstname" value="Mickey">
+
+        <button>Send an HTTP GET request to a page and get the result back</button>
+
+    </body>
+</html>

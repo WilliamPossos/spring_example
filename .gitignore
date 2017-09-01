@@ -17,4 +17,3 @@ target/
 
 # Carpetas de compilado de sencha y netbeans
 src/test
-src/main/resources/static
