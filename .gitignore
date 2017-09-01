@@ -2,7 +2,6 @@
 .classpath
 .project
 .settings/
-/src/main/resources/static
  
 # Intellij
 .idea/
